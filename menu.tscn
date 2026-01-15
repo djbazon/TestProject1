@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsp37j5dpi64f"]
+
+[ext_resource type="Script" uid="uid://bva5e2gincuqf" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://dvbjjs3cr2fxj" path="res://bg.tscn" id="2_ouk20"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="sex" type="Button" parent="."]
+offset_left = 373.0
+offset_top = 98.0
+offset_right = 732.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 91
+text = "sex"
+
+[node name="sex2" type="Button" parent="."]
+offset_left = 373.0
+offset_top = 253.0
+offset_right = 732.0
+offset_bottom = 406.0
+theme_override_font_sizes/font_size = 91
+text = "sex2"
+
+[node name="BG" parent="." instance=ExtResource("2_ouk20")]
+
+[connection signal="pressed" from="sex" to="." method="_on_sex_pressed"]
+[connection signal="pressed" from="sex2" to="." method="_on_play_2_pressed"]
