@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7105ohynf88f"]
+[gd_scene load_steps=10 format=3 uid="uid://7105ohynf88f"]
 
 [ext_resource type="Script" uid="uid://b36icek4hq5xh" path="res://level.gd" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://ofvoriuf7p2m" path="res://oak_woods_v1.0/background/background_layer_1.png" id="2_f2txt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qyrhvx7xbgmh" path="res://oak_woods_v1.0/background/background_layer_3.png" id="4_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://dlt3flgwxxdtt" path="res://adlof/adlof.tscn" id="5_km5ld"]
 [ext_resource type="Texture2D" uid="uid://c22hvmmrm87pt" path="res://oak_woods_v1.0/oak_woods_tileset.png" id="6_1ainy"]
+[ext_resource type="PackedScene" uid="uid://cu8iu3cnp3m1v" path="res://mobs/skeleton.tscn" id="7_n6hdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6hdu"]
 texture = ExtResource("6_1ainy")
@@ -476,3 +477,6 @@ layer_0/tile_data = PackedInt32Array(2359296, 65537, 0, 2359297, 131073, 0, 2359
 position = Vector2(276, 539)
 
 [node name="mobs" type="Node2D" parent="."]
+
+[node name="skeleton" parent="mobs" instance=ExtResource("7_n6hdu")]
+position = Vector2(491, 528)
