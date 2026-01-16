@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu8iu3cnp3m1v"]
+[gd_scene load_steps=6 format=3 uid="uid://cu8iu3cnp3m1v"]
 
 [ext_resource type="Script" uid="uid://d28etkwu5e8cc" path="res://mobs/skeleton.gd" id="1_ds2qu"]
 [ext_resource type="Texture2D" uid="uid://ddb4kta6vv5f5" path="res://oak_woods_v1.0/skeleton/gosha.png" id="1_gtk57"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6m7if"]
+height = 22.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ds2qu"]
 radius = 103.00485
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_snx8a"]
+radius = 6.519202
 
 [node name="skeleton" type="CharacterBody2D"]
 script = ExtResource("1_ds2qu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_6m7if")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,9 +24,24 @@ scale = Vector2(1.1874999, 1.1874999)
 texture = ExtResource("1_gtk57")
 
 [node name="Detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_ds2qu")
 
+[node name="death" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death"]
+position = Vector2(2, -10)
+shape = SubResource("CircleShape2D_snx8a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -33.0
+offset_right = 38.0
+offset_bottom = -10.0
+text = "Отсоси))))"
+
 [connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
+[connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
