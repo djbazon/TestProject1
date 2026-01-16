@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED: int = 10
+var SPEED: int = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var anim = $AnimatedSprite2D
@@ -33,8 +33,15 @@ func _physics_process(delta: float) -> void:
 	elif direction == 1:
 		$AnimatedSprite2D.flip_h = false
 		$Label.text="Направа идет"
+	if direction == 0:
+		$Label.text="Каменноугольный стоячелло"
+	if velocity.y != 0:
+		$Label.text="ПРыыыыжок"
+		
+	
 		
 	if velocity.y > 0:
 		anim.play("Fall")
+	
 		
 	move_and_slide()
