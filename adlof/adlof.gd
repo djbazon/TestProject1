@@ -29,14 +29,14 @@ func _physics_process(delta: float) -> void:
 			anim.play("idle")
 	if direction == -1:
 		$AnimatedSprite2D.flip_h = true
-		$Label.text="Налева идет"
+		$Char_Text.text="Налева идет"
 	elif direction == 1:
 		$AnimatedSprite2D.flip_h = false
-		$Label.text="Направа идет"
+		$Char_Text.text="Направа идет"
 	if direction == 0:
-		$Label.text="Каменноугольный стоячелло"
+		$Char_Text.text="Каменноугольный стоячелло"
 	if velocity.y != 0:
-		$Label.text="ПРыыыыжок"
+		$Char_Text.text="ПРыыыыжок"
 		
 	
 		
